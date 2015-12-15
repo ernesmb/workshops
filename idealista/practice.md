@@ -136,7 +136,7 @@
 ### Share
 Una vez creado nuestro mapa, podemos compartirlo de diferentes formas. Para empezar, haremos click on "Share" (Compartir) para descubrir las diferentes opciones.
 
-![Compartir](https://www.dropbox.com/s/ikbzn0maq1ygrqs/Captura%20de%20pantalla%202015-12-15%20a%20las%2017.29.49.png?dl=0)
+![Compartir](https://www.dropbox.com/s/ikbzn0maq1ygrqs/Captura%20de%20pantalla%202015-12-15%20a%20las%2017.29.49.png)
 
 La opción **get the link** nos permitirá compartir el mapa dentro de nuestro perfil público. Esto significa que los visitantes tendrán más facilidad para ver el resto de nuestros mapas publicados. Además, los perfiles públicos incluyen un sistema de comentarios.
 
