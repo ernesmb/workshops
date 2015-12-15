@@ -6,22 +6,27 @@
 - Datasets, Maps and layers
 
 ## The Editor
-- Importing data
-  - Formats
+- Download Dataset
+- Upload, georeference. Data View
+  - Type guessing
+  - Data types
+- Adding a second layer
   - Data Library
-  - Working with data before uploading
-  - table joins
-- Creating and Customising a map. 
-- Some advanced SQL examples
-  - Buffers
   - Intersections
-  - 
-- Some advanced CartoCSS examples
-  - Layers
-  - Conditional styling
-  - Using two variables
+- Some more SQL
+- Styling with CartoCSS
+  - Choropleth/Category visualizations
+  - Simple / Heatmap
+  - Torque / TorqueCat
+- Infowindows + Legends
+  - Setting
+  - HTML edits
+- Two-value symbolization
+  - Conditional CSS
+  - Category+Bubble
+- Sharing
 
-  ## cartodb.js
+## cartodb.js
   - createVis
   - createLayer
   - changing SQL on runtime

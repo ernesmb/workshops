@@ -16,6 +16,7 @@
   ```
   UPDATE barrios SET num_points=(SELECT count(*) FROM act_cult_mad a WHERE ST_Intersects(a.the_geom, barrios.the_geom))
   ```
+
 ### Some more SQL
   * ST_Buffer( ) 
 
@@ -176,6 +177,16 @@ La opción **get the link** nos permitirá compartir el mapa dentro de nuestro p
 La opción **embed it** nos permitirá copiar el código HTML en nuestra página web para insertar nuestro mapa dentro de un artículo, por ejemplo. De esta forma insertaremos el mapa en una web en forma de IFrame.
 
 Finalmente, la opción **CartoDB.js** nos ofrece el link al archivo de configuración de nuestro mapa, de forma que podamos crear aplicaciones interactivas usando Javascript.
+
+## cartodb.js
+  * [Custom Infowindow](http://bl.ocks.org/ernesmb/d7b9c7169bc9c556e29c)
+  * [Changing SQL on runtime](http://bl.ocks.org/ernesmb/cac08bd4f00fdc7e5846)
+  * [Aggregated content](http://bl.ocks.org/ernesmb/2064e4c63763d77768cc)
+  * [Change color from Infowindow](http://bl.ocks.org/xavijam/57f1c141bff4990b598f)
+  * [Want more?](http://bl.ocks.org/iriberri/)
+  * [Some more](http://bl.ocks.org/xavijam/)
+  * [Like a pro](http://bl.ocks.org/javisantana/)
+
 
 # Otros recursos  
 
