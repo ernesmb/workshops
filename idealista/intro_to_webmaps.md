@@ -30,6 +30,7 @@ En el **nivel de zoom 4** existen cuatro tiles para mostrar todo el mundo
 
 ![4-1](https://stamen-tiles-b.a.ssl.fastly.net/toner-background/1/0/0.png)
 ![4-3](https://stamen-tiles-b.a.ssl.fastly.net/toner-background/1/1/0.png)
+
 ![4-2](https://stamen-tiles-b.a.ssl.fastly.net/toner-background/1/0/1.png)
 ![4-4](https://stamen-tiles-b.a.ssl.fastly.net/toner-background/1/1/1.png)
 
@@ -102,7 +103,8 @@ CartoDB puede leer diferentes formatos:
 
 ## Layers y Mapas
 Una vez importados, puedes ver tus datos en forma de tabla, o directamente en el mapa.
-A la representación geográfica de cada 'Dataset' lo llamamos **layer**
+A la representación geográfica de cada 'Dataset' lo llamamos **layer**.
+
 Un **mapa** puede contener una o más layers
 
 En la vista de tabla puedes editar tus datos manualmente, así como aplicar filtros sobre ellos.
