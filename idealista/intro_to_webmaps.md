@@ -1,7 +1,4 @@
-# Crea tu propia cuenta
-Configura una nueva cuenta de CartoDB en https://cartodb.com/signup?
-
-# Online mapping. Una introducción. (by @iriberri)
+# Webmaps. Una introducción. (by **@iriberri**)
 
 ## Qué es y cómo funciona: basemaps, tiles, rendering...
 
@@ -70,24 +67,23 @@ Cachear las imágenes permite que los mapas sean rápidos ya que los servidores 
 
 ![mercator](https://dl.dropboxusercontent.com/u/2879308/mercator.jpg)
 
-# Visualización de datos en CartoDB
-## ¿A partir de qué datos podemos construir un mapa?
-Cualquier información que tenga asociado un contenido geoespacial puede ser trasladada a un mapa.
+==============
 
-## ¿Qué significa "geoespacial"?
+# Visualización de datos en CartoDB. Datasets, Layers y Mapas
+## ¿A partir de qué datos podemos construir un mapa?
+Cualquier información que tenga asociado un contenido geoespacial puede ser trasladada a un mapa. A un conjunto de datos con un formato adecuado se le llama **'Dataset'**
+
+### ¿Qué significa "geoespacial"?
 CartoDB puede pintar directamente en un mapa las coordenadas o geometrías que puedan estar incluídas directamente en un archivo. Algunos formatos, como los archivos Shapefile (.shp) suelen contener directamente las geometrías que se pueden dibujar encima de un mapa.
 
 Si no cuentas con un archivo que tenga este tipo de información ya geocodificada, puedes convertir tu información en un mapa si tienes:
   * Nombres de ciudades
   * Códigos postales
-  * Provincias o comunidades autónomas (al igual que otro tipo de regiones en el resto del mundo, como los estados de EEUU).
+  * Provincias y otras regiones administrativas
   * Códigos postales
   * Países
 
-## Conociendo diferentes fuentes de datos oficiales
-Durante los últimos años ha habido un aumento significativo en la aparición de portales Open Data. Los propios gobiernos locales o nacionales ponen a disposición del público general una serie de documentos con información sobre diferentes aspectos que tienen lugar en lugares específicos. Algunos de estos datos contienen directamente las coordenadas o los polígonos que pueden pintarse sobre un mapa, mientras que otros necesitan ser **georeferenciados**.
-
-## Entendiendo las fuentes de datos. ¿Qué formatos puede leer CartoDB?
+## ¿Qué formatos puede leer CartoDB?
 
 CartoDB puede leer diferentes formatos:
 * Archivos KML
@@ -96,82 +92,26 @@ CartoDB puede leer diferentes formatos:
 * Archivos Excel
 * Archivos CSV:
 
-
   ```
   provincia, partido, votos
   Alicante, PP, 2345
   Alicante, PSOE, 2345
   ```
   
-  Los archivos CSV pueden crearse con cualquier editor de texto, como el bloc de notas.
-  
-  
-CartoDB puede leer archivos Excel siempre y cuando sigan unas reglas básicas de formato:
+  Los archivos CSV pueden crearse con cualquier editor de texto, como el bloc de notas.  
 
-  * La primera fila del archivo Excel debe contener los títulos para cada columna
-  * Las celdas no pueden estar fusionadas: cada celda debe contener su propia información
-  * Debemos eliminar las columnas o filas con información no necesaria
-  * Si existen varias hojas, CartoDB tomará sólo la primera. 
-
-### Tour: vista de tabla y vista de mapa
-Una vez importados, puedes ver tus datos en forma de tabla de forma similar a Excel, o directamente en el mapa.
+## Layers y Mapas
+Una vez importados, puedes ver tus datos en forma de tabla, o directamente en el mapa.
+A la representación geográfica de cada 'Dataset' lo llamamos **layer**
+Un **mapa** puede contener una o más layers
 
 En la vista de tabla puedes editar tus datos manualmente, así como aplicar filtros sobre ellos.
 ![Tabla](https://dl.dropboxusercontent.com/u/2879308/Screen%20Shot%202015-03-02%20at%2015.43.09.png)
 En la vista de mapa puedes ver espacialmente tus datos, así como editarlos y filtrarlos.
 ![Mapa](https://dl.dropboxusercontent.com/u/2879308/Screen%20Shot%202015-03-02%20at%2015.43.34.png)
-
-
-# Nociones básicas de CartoDB
-## Georeferenciación
-Puedes visualizar tus datos en un mapa simplemente añadiendo geometrías a la información. En general, cualquier dato que quieras mostrar en un mapa necesitan tener una geometría asociada para poder ser dibujados.
-
-### Opciones de georeferenciación
-
-  * Latitud/longitud
-
-    Si tu dataset contiene dos columnas con valores de latitud y longitud puedes usar esta opción para crear los puntos en el mapa.
-  * Nombres de ciudades
-  * Regiones administrativas
-
-    CartoDB reconoce todas las regiones administrativas de nivel 0 (países), de nivel 1 (estados, CC.AA.) y de nivel 2 únicamente en España (provincias).
-  * Códigos postales
-
-    Para Francia, Estados Unidos, Canadá y Australia pueden encontrarse los códigos postales en forma de polígono. Para el resto del mundo se pueden georeferenciar códigos postales en forma de puntos.
-  * Direcciones IP
-  * Direcciones: By Street Addresses
-
-    CartoDB usa el servicio de geocoding de Nokia para ofrecer esta opción. Tener datos cuidados y muy específicos es muy importante en este caso para evitar errores o conflictos.
   
-## Filtrar y visualizar datos en diferentes capas. Ejemplo práctico.
+## PostGIS+CartoCSS
+CartoDB utiliza una base de datos con capacidad espacial para almacenar, modificar y mostrar los datos. 
+Cuando realizamos una 'consulta' (**query**) a la base de datos, establecemos una serie de normas para su representación. Estas normas se escriben en lenguaje [CartoCSS](https://github.com/mapbox/carto/blob/master/docs/latest.md).
 
-1. Importamos nuestro dataset desde Data Library: Spanish provinces
-2. Añadimos una nueva capa a nuestra tabla desde una tabla de populated places: se crea una visualización
-3. Usamos el buscador para ir a Madrid
-4. Filtramos el antiguo dataset por 'España': adm0name = Spain
-5. Dibujamos la capa superior con un wizard de burbujas
-6. Cambiamos el basemap
-7. Activamos las infowindows
-8. Añadimos overlays en algunas ciudades 
-9. Editamos leyendas
-10. Edición de CartoCSS
 
-![mapa](https://dl.dropboxusercontent.com/u/2879308/Screen%20Shot%202015-04-15%20at%2023.28.16.png)
-
-Una vez creado nuestro mapa, podemos compartirlo de diferentes formas. Para empezar, haremos click on "Share" (Compartir) para descubrir las diferentes opciones.
-
-![Compartir](https://dl.dropboxusercontent.com/u/2879308/Screen%20Shot%202015-03-02%20at%2018.10.36.png)
-
-La opción **get the link** nos permitirá compartir el mapa dentro de nuestro perfil público. Esto significa que los visitantes tendrán más facilidad para ver el resto de nuestros mapas publicados. Además, los perfiles públicos incluyen un sistema de comentarios.
-
-La opción **embed it** nos permitirá copiar el código HTML en nuestra página web para insertar nuestro mapa dentro de un artículo, por ejemplo. De esta forma insertaremos el mapa en una web en forma de IFrame.
-
-Finalmente, la opción **CartoDB.js** nos ofrece el link al archivo de configuración de nuestro mapa, de forma que podamos crear aplicaciones interactivas usando Javascript.
-
-# Otros recursos  
-
-* CartoDB Academy: http://academy.cartodb.com
-* CartoDB Docs: http://docs.cartodb.com
-* CartoDB FAQs: http://docs.cartodb.com/faqs/
-* CartoDB Tips&Tricks: http://docs.cartodb.com/tips-and-tricks/
-* CartoDB Training: http://cartodb.github.io/training || https://github.com/cartodb/training
