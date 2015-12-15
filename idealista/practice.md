@@ -16,8 +16,9 @@
   ```
   UPDATE barrios SET num_points=(SELECT count(*) FROM act_cult_mad a WHERE ST_Intersects(a.the_geom, barrios.the_geom))
   ```
-* Some more SQL
-  * ST_Buffer() 
+### Some more SQL
+  * ST_Buffer( ) 
+
     ```
 	SELECT cartodb_id, any_other_column, 
 	  ST_Transform(ST_Buffer(
@@ -25,14 +26,17 @@
 	  3785) AS the_geom_webmercator
 	FROM table;
 	```
-  * ST_DWithin()
+
+  * ST_DWithin( )
+
     ```
     WITH aux AS(SELECT * FROM table)
 	SELECT table.* FROM table, aux
 	WHERE ST_DWithin(table.the_geom::geography, aux.the_geom::geography, 1000)
 	AND table.cartodb_id !=aux.cartodb_id;
 	```
-  * CDB_RectangleGrid()
+  * CDB_RectangleGrid( )
+
     ```
     SELECT CDB_RectangleGrid(
 	  ST_SetSRID(
