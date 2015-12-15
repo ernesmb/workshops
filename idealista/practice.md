@@ -136,7 +136,7 @@
 ### Share
 Una vez creado nuestro mapa, podemos compartirlo de diferentes formas. Para empezar, haremos click on "Share" (Compartir) para descubrir las diferentes opciones.
 
-![Compartir](https://drive.google.com/a/cartodb.com/file/d/0B1voFOlNjMXdbWJfSWg4S2ZmMTQ/view?usp=sharing)
+![Compartir](https://drive.google.com/file/d/0B1voFOlNjMXdbWJfSWg4S2ZmMTQ/view?usp=sharing)
 
 La opción **get the link** nos permitirá compartir el mapa dentro de nuestro perfil público. Esto significa que los visitantes tendrán más facilidad para ver el resto de nuestros mapas publicados. Además, los perfiles públicos incluyen un sistema de comentarios.
 
