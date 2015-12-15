@@ -12,6 +12,7 @@
 ### Second Layer
 * Data Library
 * Intersection
+ 
   ```
   UPDATE barrios SET num_points=(SELECT count(*) FROM act_cult_mad a WHERE ST_Intersects(a.the_geom, barrios.the_geom))
   ```
@@ -133,13 +134,9 @@
 ```
 
 ### Share
-
-
-![mapa](https://dl.dropboxusercontent.com/u/2879308/Screen%20Shot%202015-04-15%20at%2023.28.16.png)
-
 Una vez creado nuestro mapa, podemos compartirlo de diferentes formas. Para empezar, haremos click on "Share" (Compartir) para descubrir las diferentes opciones.
 
-![Compartir](https://dl.dropboxusercontent.com/u/2879308/Screen%20Shot%202015-03-02%20at%2018.10.36.png)
+![Compartir](https://drive.google.com/a/cartodb.com/file/d/0B1voFOlNjMXdbWJfSWg4S2ZmMTQ/view?usp=sharing)
 
 La opción **get the link** nos permitirá compartir el mapa dentro de nuestro perfil público. Esto significa que los visitantes tendrán más facilidad para ver el resto de nuestros mapas publicados. Además, los perfiles públicos incluyen un sistema de comentarios.
 
